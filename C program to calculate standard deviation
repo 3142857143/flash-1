@@ -1,0 +1,44 @@
+/*This program calculates the standard deviation.*/
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+int mean(int n, int m);
+int main()
+{
+        int z[1000], a, b, sum, j=0, i=1, p=0, sum1, e;
+        float c, f, d;
+        printf("Enter the number of terms: ");
+        scanf("%d", &a);
+        while(i<=a)
+        {
+                printf("Enter the %d integer: ", i);
+                scanf("%d", &z[p]);
+                p += 1;
+                i += 1;
+        }
+        sum = 0;
+        while(j<=p)
+        {
+                sum = sum + z[j];
+                j += 1;
+        }
+        c = mean(sum, a);
+        sum1 = 0;
+        j = 0;
+        for(e=1;e<=p;e++)
+        {
+                z[j] = z[j] - c;
+                sum1 += pow(z[j], 2);
+                j += 1;
+        }
+        d = mean(sum1, a);
+        f = sqrt(d);
+        printf("%f", f);
+        return 0;
+}
+int mean(int n, int m)
+{
+        float sum;
+        sum = n/m;
+        return sum;
+}
