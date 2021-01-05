@@ -1,0 +1,35 @@
+/*This program gives average using array*/
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+int average(int n, int m);
+int main()
+{
+    int i, b, a[1000], n, j, sum;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    i = 0;
+    b = 1;
+    while(b<=n)
+    {
+        printf("Enter %d integer: ", b);
+        scanf("%d", &a[i]);
+        i += 1;
+        b += 1;
+    }
+    j = 0;
+    sum = 0;
+    while(j<=i)
+    {
+        sum = sum + a[j];
+        j += 1;
+    }
+    average(sum, n);
+    return 0;
+}
+int average(int n, int m)
+{
+        float avg;
+        avg = n/m;
+        printf("%f", avg);
+}     
